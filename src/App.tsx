@@ -1,6 +1,8 @@
-import { Button, Card, Container, Input } from "@/components";
+import { Button, Container, Input, cardVariants } from "@/components";
 import { validation } from "@/contants/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
+import clsx from "clsx";
+import { m } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -30,14 +32,18 @@ function App() {
   return (
     <div className="flex min-h-screen w-full bg-[url(/img/bg-spikes.webp)]">
       <Container className="container flex items-center justify-center py-2">
-        <Card className="flex max-w-[620px] grow flex-col gap-6 px-4 py-6 md:px-6 md:py-8">
+        <m.div
+          initial={{ zoom: 0.9, opacity: 0 }}
+          animate={{ zoom: 1, opacity: 1 }}
+          className={clsx(cardVariants(), "flex max-w-[620px] grow flex-col gap-6 px-4 py-6 md:px-6 md:py-8")}
+        >
           <h3 className="text-2xl font-bold">Zaloguj się</h3>
           <form className="flex flex-col gap-4" onSubmit={onSubmit}>
             <Input label="Email" placeholder="Adres email" error={errors.email?.message} {...register("email")} />
             <Input label="Hasło" placeholder="Hasło" error={errors.password?.message} {...register("password")} />
-            <Button className="self-end">Zaloguj się</Button>
+            <Button className="mt-2 self-end">Zaloguj się</Button>
           </form>
-        </Card>
+        </m.div>
       </Container>
     </div>
   );

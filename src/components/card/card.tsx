@@ -25,4 +25,4 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(({ children, className,
 
 Card.displayName = "Card";
 
-export { Card, type CardProps };
+export { Card, type CardProps, cardVariants };
