@@ -3,6 +3,7 @@ import { validation } from "@/contants/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import clsx from "clsx";
 import { m } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -35,13 +36,16 @@ function App() {
         <m.div
           initial={{ zoom: 0.9, opacity: 0 }}
           animate={{ zoom: 1, opacity: 1 }}
+          transition={{ type: "spring", damping: 12, duration: 0.3 }}
           className={clsx(cardVariants(), "flex max-w-[620px] grow flex-col gap-6 px-4 py-6 md:px-6 md:py-8")}
         >
           <h3 className="text-2xl font-bold">Zaloguj się</h3>
           <form className="flex flex-col gap-4" onSubmit={onSubmit}>
             <Input label="Email" placeholder="Adres email" error={errors.email?.message} {...register("email")} />
             <Input label="Hasło" placeholder="Hasło" error={errors.password?.message} {...register("password")} />
-            <Button className="mt-2 self-end">Zaloguj się</Button>
+            <Button className="mt-2 self-end">
+              Zaloguj się <ArrowRight width="1em" height="1em" />
+            </Button>
           </form>
         </m.div>
       </Container>

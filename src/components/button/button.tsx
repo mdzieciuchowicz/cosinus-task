@@ -27,18 +27,13 @@ const buttonVariants = cva(
   },
 );
 
-type ButtonProps = {
-  children?: React.ReactNode | React.ReactNode[];
-  className?: string;
-  icon?: React.ReactNode;
-} & VariantProps<typeof buttonVariants>;
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants>;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, className, size, variant, icon, ...rest }, ref) => {
+  ({ children, className, size, variant, ...rest }, ref) => {
     return (
       <button ref={ref} className={clsx(buttonVariants({ size, variant }), className)} {...rest}>
         {children}
-        {icon}
       </button>
     );
   },
