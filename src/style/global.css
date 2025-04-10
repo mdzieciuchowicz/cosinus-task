@@ -3,7 +3,7 @@
 @theme {
   --color-primary: #3c37ff;
   --color-primary-500: #3c37ff;
-  --color-primary-400: #5e5bf8;
+  --color-primary-400: #514bfa;
   --color-primary-300: #6b69f5;
   --color-primary-100: #9d9be7;
 
@@ -13,4 +13,6 @@
   --color-gray-300: #262626;
   --color-gray-200: #737373;
   --color-gray-100: #fafafa;
+
+  --color-error: #d41306;
 }
