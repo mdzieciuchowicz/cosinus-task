@@ -4,7 +4,7 @@ import React from "react";
 
 const buttonVariants = cva(
   [
-    "flex items-center rounded-full transition-colors duration-300 focus:outline-none group/icon font-bold cursor-pointer",
+    "flex items-center rounded-lg transition-colors duration-300 focus:outline-none group/icon font-bold cursor-pointer",
     "focus-visible:outline-primary focus-visible:outline-offset-2 focus-visible:outline-1",
   ],
   {
@@ -46,4 +46,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = "Button";
 
-export { Button };
+export { Button, type ButtonProps };
